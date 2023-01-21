@@ -11,13 +11,13 @@ while selectedsandwhich not in sandwhichlist:
     selectedsandwhich = (input("Please select a, b, or c: ")).lower()
     
 if selectedsandwhich == "a":
-  print("You selected Chicken Sandwhich\nTotal: $5.25")
+  print("You selected Chicken Sandwhich\nYour current total is: $5.25")
   total = 5.25
 elif selectedsandwhich == "b":
-  print("You selected Beef Sandwhich\nTotal: $6.25")
+  print("You selected Beef Sandwhich\nYour current total is: $6.25")
   total = 6.25
 else:
-  print("You selected Tofu Sandwhich\nTotal: $5.75")
+  print("You selected Tofu Sandwhich\nYour current total is: $5.75")
   total = 5.75
 #---------------------------------------------------------beverages--------------------------------------------------------
 beverage = (input("Would you like a beverage? Yes/No: ")).lower()
@@ -53,11 +53,12 @@ if frenchfries == "yes":
     megasize=(input("Would you like to megasize your fries? Yes/No: ")).lower()
     while megasize not in choice:
       megasize=(input("Please enter yes or no: ")).lower()
-      if megasize =="no":
-        total = total + 1
-        print(f"You selected small\n\nYour current total is ${total:.2f}\n")
+    if megasize =="no":
+      total = total + 1
+      print(f"\nYou selected small\n\nYour current total is ${total:.2f}\n")
+    else:
       total = total + 2
-      print(f"You selected megasize\n\nYour current total is ${total:.2f}\n")
+      print(f"\nYou selected megasize\n\nYour current total is ${total:.2f}\n")
       
   elif frenchfrysize == "medium":
     total = total + 1.50
