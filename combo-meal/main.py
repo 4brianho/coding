@@ -1,12 +1,11 @@
 #---------------------------------------------------------sandwhich--------------------------------------------------------
-msg="What type of sandwhich would you like?\na) Chicken Sandwhich-$5.25\nb) Beef Sandwhich-$6.25\nc) Tofu Sandwhich-$5.75\n"
 selectedsandwhich = ""
 beveragesize = ""
 frenchfrysize = ""
 
 sandwhichlist = ["a", "b", "c"]
 total = 0.00
-selectedsandwhich = (input(msg)).lower()
+selectedsandwhich = (input("What type of sandwhich would you like?\na) Chicken Sandwhich-$5.25\nb) Beef Sandwhich-$6.25\nc) Tofu Sandwhich-$5.75\n")).lower()
 while selectedsandwhich not in sandwhichlist:
     selectedsandwhich = (input("Please select a, b, or c: ")).lower()
     
