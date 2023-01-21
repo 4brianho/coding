@@ -23,13 +23,13 @@ else:
 beverage = (input("Would you like a beverage? Yes/No: ")).lower()
 choice = ["yes","no"]
 while beverage.lower() not in choice:
-  beverage = (input("Please answer yes or no")).lower()
+  beverage = (input("Please answer yes or no: ")).lower()
   
 if beverage == "yes":
   beveragesizelist = ["small", "medium","large"]
-  beveragesize=(input("What size beverage would you like?\nsmall-$1.00\nmedium-$1.75\nlarge-$2.25")).lower()
+  beveragesize=(input("What size beverage would you like?\nsmall-$1.00\nmedium-$1.75\nlarge-$2.25\n")).lower()
   while beveragesize.lower() not in beveragesizelist:
-    beveragesize = input("Please select small, medium or large").lower()
+    beveragesize = input("Please select small, medium or large: ").lower()
   if beveragesize =="small":
     total = total + 1
     print(f"You selected small\n\nYour current total is ${total:.2f}\n")
@@ -43,16 +43,16 @@ if beverage == "yes":
 frenchfrysizelist =["small","medium","large"]
 frenchfries= (input("Would you like french fries? Yes/No: ")).lower()
 while frenchfries not in choice:
-  frenchfries = (input("Please answer yes or no")).lower()
+  frenchfries = (input("Please answer yes or no: ")).lower()
   
 if frenchfries == "yes":
-  frenchfrysize =(input("What size french fries would you like?\nsmall-$1.00\nmedium-$1.50\nlarge-$2.00")).lower()
+  frenchfrysize =(input("What size french fries would you like?\nsmall-$1.00\nmedium-$1.50\nlarge-$2.00\n")).lower()
   while frenchfrysize not in frenchfrysizelist:
     frenchfrysize = input("Please select small, medium or large").lower()  
   if frenchfrysize == "small":
-    megasize=(input("Would you like to megasize your fries?")).lower()
+    megasize=(input("Would you like to megasize your fries? Yes/No: ")).lower()
     while megasize not in choice:
-      megasize=(input("Please enter yes or no")).lower()
+      megasize=(input("Please enter yes or no: ")).lower()
       if megasize =="no":
         total = total + 1
         print(f"You selected small\n\nYour current total is ${total:.2f}\n")
@@ -66,14 +66,14 @@ if frenchfries == "yes":
     total = total + 2
     print(f"You selected large\n\nYour current total is ${total:.2f}\n")
 #--------------------------------------------------------ketchup-------------------------------------------------------------
-ketchupnum = int(input("How many keptchup packets would you like?\n"))
-total = total + 0.25*ketchupnum
+ketchupnum = input("How many keptchup packets would you like?\n")
+while not ketchupnum.isnumeric():
+  ketchupnum = input("Please enter a whole number greater than or equal to zero.\n")
+if int(ketchupnum) >= 0:
+  total = total + 0.25 * int(ketchupnum)
 
 if selectedsandwhich != "" and beveragesize != "" and frenchfrysize != "":
   total = total - 1
   print("Because you selected a Sandwhich, French Fries and a Drink, you recieve a $1.00 discount\n")  
 print(f"Your final total is ${total:.2f}")
   
-
-
-
